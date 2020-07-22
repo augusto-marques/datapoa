@@ -1,0 +1,11 @@
+
+<ul class="linhas">
+    <li *ngFor="let linha of linhas">
+        <button routerLink="/onibus/{{linha.id}}">
+            ITINERÁRIO
+        </button>
+        <span> - {{linha.id}} - </span>
+        <span>{{linha.nome}} - </span>
+        <span>{{linha.codigo}}</span>
+    </li>
+</ul>
