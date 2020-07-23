@@ -1,8 +1,10 @@
 
 <ul class="itinerario">
     <li *ngFor="let iti of itinerario">
-        <span>lat: {{iti.lat}}  </span>
-        <span>lng: {{iti.lng}}  </span>
+        <a (click)="verMapa(iti.lat, iti.lng)">
+            <span>lat: {{iti.lat}}  </span>
+            <span>lng: {{iti.lng}}  </span>
+        </a>
     </li>
 </ul>
-
+<button *ngIf="paginaCarregada" (click)="voltar()">VOLTAR</button>

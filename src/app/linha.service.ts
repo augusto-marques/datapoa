@@ -29,4 +29,5 @@ export class LinhaService {
     let resposta = this.http.get<{}>(this.url, { params: {a : 'il', p : `${id}`}})
     return resposta;
   }
+
 }
