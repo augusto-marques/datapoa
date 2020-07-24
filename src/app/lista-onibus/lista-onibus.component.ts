@@ -9,16 +9,29 @@ import { Linha } from '../linha';
 })
 export class ListaOnibusComponent implements OnInit {
   linhas: Linha[] = [];
+  linhasFormatada: Linha[] = [];
+  palavraChave: string;
 
   constructor(private linhaService: LinhaService) { }
 
   ngOnInit(): void {
+    this.palavraChave = "";
     this.getLinhas();
   }
 
   getLinhas() : void {
     this.linhaService.getLinhas()
-      .subscribe(linhas => this.linhas = linhas.slice(1, 25));
+      .subscribe(linhas => {this.linhas = linhas;
+                            this.linhasFormatada = linhas});
+  }
+
+  onKey(event: any) {
+    this.palavraChave = event.target.value.toUpperCase();
+    // this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
+  }
+
+  procurar() : void {
+    this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
   }
 
 }

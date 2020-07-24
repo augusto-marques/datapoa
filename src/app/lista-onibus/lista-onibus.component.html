@@ -1,6 +1,8 @@
 
-<ul class="linhas">
-    <li *ngFor="let linha of linhas">
+<input (keyup)="onKey($event)">
+<button (click)="procurar()">Pesquisar</button>
+<ul class="linhasFormatada">
+    <li *ngFor="let linha of linhasFormatada">
         <button routerLink="/onibus/{{linha.id}}">
             ITINERÁRIO
         </button>
