@@ -19,9 +19,19 @@ export class LinhaService {
   .set('p', '%')
   .set('t', "o");
 
+  private parametrosLotacao = new HttpParams()
+  .set('a', 'nc')
+  .set('p', '%')
+  .set('t', "l");
+
 
   getLinhas(): Observable<Linha[]> {
     let resposta = this.http.get<Linha[]>(this.url, { params: this.parametros });
+    return resposta;
+  }
+
+  getLinhasLotacao(): Observable<Linha[]> {
+    let resposta = this.http.get<Linha[]>(this.url, { params: this.parametrosLotacao });
     return resposta;
   }
 

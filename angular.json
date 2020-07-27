@@ -25,7 +25,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "https://fonts.googleapis.com/icon?family=Material+Icons",
               "src/styles.css"
             ],
             "scripts": [
