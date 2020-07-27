@@ -28,6 +28,7 @@ export class ListaOnibusComponent implements OnInit {
   onKey(event: any) {
     this.palavraChave = event.target.value.toUpperCase();
     // this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
+    this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
   }
 
   procurar() : void {
