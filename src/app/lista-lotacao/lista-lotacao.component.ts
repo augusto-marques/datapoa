@@ -11,6 +11,7 @@ export class ListaLotacaoComponent implements OnInit {
   linhas: Linha[] = [];
   linhasFormatada: Linha[] = [];
   palavraChave: string;
+  p: number = 1;
 
   constructor(private linhaService: LinhaService) { }
 

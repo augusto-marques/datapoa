@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Encontre seu Transporte';
+
+  paceOptions = {
+    elements: {
+      selectors: ['.linhasFormatada', '.table-responsive']
+    }
+  }
 }

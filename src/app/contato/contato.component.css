@@ -1,0 +1,19 @@
+.contato {
+    /* text-align: center; */
+    font-family: Quicksand;
+    background-color: whitesmoke;
+    padding: 50px;
+    max-width: 75%;
+}
+
+.contato-titulo {
+    
+}
+
+#img-profile {
+    border-radius: 50%;
+    width: 10em;
+    height: auto;
+    border: 5px solid #8954B1;
+    float: right;
+}

@@ -8,12 +8,12 @@
         </tr>
     </thead>
     <tbody class="itinerario">
-        <tr *ngFor="let iti of itinerario">
+        <tr *ngFor="let iti of itinerario | paginate: { itemsPerPage: 15, currentPage: p }" >
             <td>{{iti.lat}}</td>
             <td>{{iti.lng}}</td>
             <td>        
                 <a (click)="verMapa(iti.lat, iti.lng)">
-                    Ver Mapa
+                    Ver no mapa
                     <span class="material-icons md-18">
                         open_in_new
                     </span>
@@ -22,5 +22,7 @@
         </tr>
     </tbody>
 </table>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 <button *ngIf="paginaCarregada" (click)="voltar()">VOLTAR</button>

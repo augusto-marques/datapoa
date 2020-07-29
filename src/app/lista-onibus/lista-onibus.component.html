@@ -22,22 +22,37 @@
             <tr>
               <th>Nome da Linha</th>
               <th>Código</th>
-              <th>Link</th>
+              <th>Itinerários</th>
             </tr>
         </thead>
         <tbody class="linhasFormatada">
-            <tr *ngFor="let linha of linhasFormatada">
+            <tr *ngFor="let linha of linhasFormatada | paginate: { itemsPerPage: 15, currentPage: p }">
                 <td>{{linha.nome}}</td>
                 <td>{{linha.codigo}}</td>
                 <td>        
                     <a routerLink="/onibus/{{linha.id}}">
-                        Itineràrio
+                        Ver Itinerário
                     </a>
                 </td>
             </tr>
         </tbody>
     </table>
-    <nav aria-label="Page navigation example">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    <!-- <pagination-controls  id="some_id"
+                      (pageChange)="pageChanged($event)"
+                      (pageBoundsCorrection)="pageChanged($event)"
+                      maxSize="9"
+                      directionLinks="true"
+                      autoHide="false"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+    </pagination-controls> -->
+    <!-- <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
           <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -45,5 +60,5 @@
           <li class="page-item"><a class="page-link" href="#">3</a></li>
           <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
-      </nav>
+      </nav> -->
 </div>

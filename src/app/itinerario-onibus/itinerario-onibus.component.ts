@@ -13,6 +13,7 @@ export class ItinerarioOnibusComponent implements OnInit {
   private url = "https://www.google.com/maps/?q="
   public itinerario = [];
   public paginaCarregada: Boolean;
+  p: number = 1;
 
   constructor(
     private rota: ActivatedRoute,
