@@ -4,9 +4,10 @@ import { ListaOnibusComponent } from './lista-onibus/lista-onibus.component';
 import { ListaLotacaoComponent } from './lista-lotacao/lista-lotacao.component';
 import { ItinerarioOnibusComponent } from './itinerario-onibus/itinerario-onibus.component';
 import { ContatoComponent } from './contato/contato.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo : 'onibus', pathMatch: 'full' },
+  { path: '', component: LandingPageComponent},
   { path: 'onibus', component: ListaOnibusComponent },
   { path: 'lotacao', component: ListaLotacaoComponent },
   { path: 'lotacao/:id', component: ListaLotacaoComponent },

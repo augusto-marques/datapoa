@@ -1,3 +1,14 @@
+<div class ='centered'>
+
+<div class="row">
+    <div class="col">
+        <h4 class="title-component">Lista de Itinerários</h4>
+    </div>
+
+    <div class="col">
+        <button *ngIf="paginaCarregada" (click)="voltar()" class="back-button btn btn-light">Voltar para linhas</button>
+    </div>
+</div>
 
 <table class="table table-striped table-bordered table-sm">
     <thead>
@@ -8,7 +19,7 @@
         </tr>
     </thead>
     <tbody class="itinerario">
-        <tr *ngFor="let iti of itinerario | paginate: { itemsPerPage: 15, currentPage: p }" >
+        <tr *ngFor="let iti of itinerario | paginate: { itemsPerPage: 18, currentPage: p }" >
             <td>{{iti.lat}}</td>
             <td>{{iti.lng}}</td>
             <td>        
@@ -23,6 +34,13 @@
     </tbody>
 </table>
 
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls class="pagination-component"
+                (pageChange)="p = $event"
+                previousLabel="Anterior"
+                nextLabel="Próximo"
+                screenReaderPaginationLabel="Paginação"
+                screenReaderPageLabel="pagina"
+                screenReaderCurrentLabel="você está na pagina">
+</pagination-controls>
 
-<button *ngIf="paginaCarregada" (click)="voltar()">VOLTAR</button>
+</div>

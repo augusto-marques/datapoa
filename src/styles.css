@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+
+.centered {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 4em;
+}
+
+.title-component {
+    font-family: quicksand;
+    /* text-align: center; */
+    margin-bottom: 1em;
+}
+
+.pagination-component {
+    float: right;
+}
+
+.pesquisa {
+    font-family:quicksand, FontAwesome
+}
+
+.back-button {
+    font-family: quicksand;
+    float: right;
+}
+
+/* body {
+    background-color: whitesmoke
+} */
+
+/* .tabela-linhas {
+    background-color: whitesmoke;
+} */
+
+/* html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #3D44A8;
+    background-image: linear-gradient(#3D44A8, #2199E8);
+} */
+
+.landing-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: #3D44A8;
+    background-image: linear-gradient(#3D44A8, #2199E8);
+    z-index: -1;
+}
+
+.landing-content {
+    line-height: 1.5;
+    margin-top: 30vh;
+    text-align: center;
+    font-family: quicksand;
+    font-size: 2em;
+    color: whitesmoke;
+}
+
+.landing-content span {
+    display: block;
+    /* padding-top: 0em; */
+    margin-bottom: 1em;
+}
+
+.landing-content :hover {
+    color: #42c5f5;
+}
+
+.landing-content :active {
+    color: #2199E8;
+    outline: 0;
+}
+
+.landing-content :focus {
+    outline: 0;
+}
+

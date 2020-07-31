@@ -9,6 +9,7 @@ import { ListaOnibusComponent } from './lista-onibus/lista-onibus.component';
 import { ItinerarioOnibusComponent } from './itinerario-onibus/itinerario-onibus.component';
 import { ListaLotacaoComponent } from './lista-lotacao/lista-lotacao.component';
 import { ContatoComponent } from './contato/contato.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContatoComponent } from './contato/contato.component';
     ListaOnibusComponent,
     ItinerarioOnibusComponent,
     ListaLotacaoComponent,
-    ContatoComponent
+    ContatoComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

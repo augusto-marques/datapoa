@@ -1,7 +1,23 @@
+<div class ='centered'>
 
 <form>
-    <input (keyup)="onKey($event)" type="search" class="form-control search-field" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pesquise uma linha de onibus...">
-    <!-- <button type="submit" class="btn btn-primary">Pesquisar</button> -->
+    <div class="row">
+
+        <div class="col">
+            <h4 class="title-component">Linhas de Onibus</h4>
+        </div>
+
+        <div class="col">
+            <input (keyup)="onKey($event)"
+            type="search" 
+            class="form-control search-field pesquisa" 
+            id="pesquisaLinha" 
+            aria-describedby="pesquisaLinha" 
+            placeholder="&#xF002;  Pesquise por uma linha..."
+            >
+        </div>
+
+    </div>
 </form>
 
 <!-- 
@@ -26,7 +42,7 @@
             </tr>
         </thead>
         <tbody class="linhasFormatada">
-            <tr *ngFor="let linha of linhasFormatada | paginate: { itemsPerPage: 15, currentPage: p }">
+            <tr *ngFor="let linha of linhasFormatada | paginate: { itemsPerPage: 18, currentPage: p }">
                 <td>{{linha.nome}}</td>
                 <td>{{linha.codigo}}</td>
                 <td>        
@@ -37,7 +53,15 @@
             </tr>
         </tbody>
     </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    <pagination-controls class="pagination-component"
+                    (pageChange)="p = $event"
+                    previousLabel="Anterior"
+                    nextLabel="Próximo"
+                    screenReaderPaginationLabel="Paginação"
+                    screenReaderPageLabel="pagina"
+                    screenReaderCurrentLabel="você está na pagina">
+    </pagination-controls>
 
     <!-- <pagination-controls  id="some_id"
                       (pageChange)="pageChanged($event)"
@@ -61,4 +85,6 @@
           <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
       </nav> -->
+</div>
+
 </div>
