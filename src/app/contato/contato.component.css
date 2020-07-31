@@ -58,7 +58,7 @@
 .contato-titulo {
     position:  absolute;
     left: 0;
-    top: 2vh;
+    top: 3vh;
 
     right: 0;
     text-align: center;
@@ -69,8 +69,8 @@
 
 .links-container {
     position: absolute;
-    bottom: 5vh;
-    left: 4vh;
+    bottom: 2.5em;
+    left: 2em;
     /* left: 4em;
     bottom: 9em; */
 }
@@ -79,6 +79,10 @@
     font-family: monospace;
     color: #13A10E;
     font-size: 14px;
+}
+
+.contato-links-type {
+    display: none;
 }
 
 .contato-links a{
@@ -103,6 +107,9 @@
 @media (min-width: 576px) {
     .contato-links {
         font-size: 16px;
+    }
+    .contato-links-type {
+        display: inline;
     }
 }
 
