@@ -1,7 +1,0 @@
-docker build -t marquesaugusto/datapoa .
-
-docker run --name datapoa -d -p 8888:80 marquesaugusto/datapoa
-
-docker login -u marquesaugusto -p garishadom
-
-docker push marquesaugusto/datapoa
