@@ -13,6 +13,7 @@ export class ItinerarioOnibusComponent implements OnInit {
   public itinerario = [];
   public carregando = true;
   p: number = 1;
+  public nome = ""
 
   constructor(
     private rota: ActivatedRoute,
@@ -28,7 +29,11 @@ export class ItinerarioOnibusComponent implements OnInit {
   getItinerario(): void {
     const id = +this.rota.snapshot.paramMap.get('id');
     this.linhaService.getItinerario(id)
-      .subscribe(itinerario=> {this.itinerario = Object.values(itinerario);
+      .subscribe(itinerario => {this.itinerario = Object.values(itinerario);
+      this.nome = this.itinerario.filter(valor => typeof valor === "string")
+                                 .slice(1,)
+                                 .reduce((acumulador, valor) => acumulador + " - " + valor);
+      this.itinerario = this.itinerario.filter(valor => typeof valor !== "string");
       this.carregando = false});
   }
 

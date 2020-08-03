@@ -1,8 +1,8 @@
 <div class ='centered'>
 
 <div class="row">
-    <div class="col">
-        <h4 class="title-component">Lista de Itinerários</h4>
+    <div class="col-8">
+        <h5 class="title-component">{{this.nome}}</h5>
     </div>
 
     <div class="col">
@@ -23,7 +23,7 @@
             <td>{{iti.lat}}</td>
             <td>{{iti.lng}}</td>
             <td>        
-                <a (click)="verMapa(iti.lat, iti.lng)">
+                <a class="ver-no-mapa" (click)="verMapa(iti.lat, iti.lng)">
                     Ver no mapa
                     <span class="material-icons md-18">
                         open_in_new

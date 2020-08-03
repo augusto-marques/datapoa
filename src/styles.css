@@ -6,9 +6,13 @@
     margin-top: 4em;
 }
 
+.navbar {
+    background-image: linear-gradient(#3D44A8, #3B4AAD);
+    font-family: Quicksand;
+}
+
 .title-component {
     font-family: quicksand;
-    /* text-align: center; */
     margin-bottom: 1em;
 }
 
@@ -25,25 +29,6 @@
     float: right;
 }
 
-/* body {
-    background-color: whitesmoke
-} */
-
-/* .tabela-linhas {
-    background-color: whitesmoke;
-} */
-
-/* html {
-    height: 100%;
-}
-
-body {
-    height: 100%;
-    margin: 0;
-    background-color: #3D44A8;
-    background-image: linear-gradient(#3D44A8, #2199E8);
-} */
-
 .landing-background {
     position: absolute;
     bottom: 0;
@@ -55,17 +40,17 @@ body {
 }
 
 .landing-content {
+    cursor: pointer;
     line-height: 1.5;
     margin-top: 30vh;
     text-align: center;
     font-family: quicksand;
-    font-size: 2em;
+    font-size: 1.5em;
     color: whitesmoke;
 }
 
 .landing-content span {
     display: block;
-    /* padding-top: 0em; */
     margin-bottom: 1em;
 }
 
@@ -87,4 +72,10 @@ body {
     position: absolute;
     top: 30%; left: 0; bottom: 0; right: 0;
     font-family: quicksand;
+}
+
+@media (min-width: 576px) {
+    .landing-content {
+        font-size: 2em;
+    }
 }

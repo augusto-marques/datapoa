@@ -1,1 +1,12 @@
 .material-icons.md-18 { font-size: 16px; }
+
+.ver-no-mapa {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.ver-no-mapa:hover {
+    color: #2f68a0;
+    text-decoration: underline;
+}
+

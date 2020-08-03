@@ -9,7 +9,7 @@ import { Linha } from './linha';
 export class LinhaService {
   constructor(private http: HttpClient) { }
 
-  private url = "http://www.poatransporte.com.br/php/facades/process.php"
+  private url = "http://www.poatransporte.com.br/php/facades/process.php";
 
   private parametros = new HttpParams()
   .set('a', 'nc')
