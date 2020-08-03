@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LinhaService } from '../linha.service';
 import { Linha } from '../linha';
-import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lista-onibus',
@@ -22,6 +21,7 @@ export class ListaOnibusComponent implements OnInit {
     this.getLinhas();
   }
 
+  // chama a funcao getLInhas do linhaService espera a resposta e adiciona o valor a linhas
   getLinhas() : void {
     this.linhaService.getLinhas()
       .subscribe(linhas => {this.linhas = linhas;
@@ -29,14 +29,9 @@ export class ListaOnibusComponent implements OnInit {
                             this.carregando = false});
   }
 
+  // recebe o evento quando uma tecla e precionada no searchbox e atualiza linhasFormatada
   onKey(event: any) {
     this.palavraChave = event.target.value.toUpperCase();
-    // this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
     this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
   }
-
-  procurar() : void {
-    this.linhasFormatada = this.linhas.filter(linha => linha.nome.includes(this.palavraChave))
-  }
-
 }

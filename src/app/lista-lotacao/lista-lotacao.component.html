@@ -1,22 +1,18 @@
 <div *ngIf="!carregando" class ='centered'>
-
     <form>
         <div class="row">
-
             <div class="col">
                 <h4 class="title-component">Linhas de Lotações</h4>
             </div>
-
             <div class="col">
-                    <input (keyup)="onKey($event)"
-                        type="search" 
-                        class="form-control search-field pesquisa" 
-                        id="pesquisaLinha" 
-                        aria-describedby="pesquisaLinha" 
-                        placeholder="&#xF002;  Pesquise por uma linha..."
-                    >
+                <input (keyup)="onKey($event)"
+                    type="search" 
+                    class="form-control search-field pesquisa" 
+                    id="pesquisaLinha" 
+                    aria-describedby="pesquisaLinha" 
+                    placeholder="&#xF002;  Pesquise por uma linha..."
+                >
             </div>
-
         </div>
     </form>
 
@@ -41,6 +37,7 @@
                 </tr>
             </tbody>
         </table>
+
         <pagination-controls class="pagination-component"
                         (pageChange)="p = $event"
                         previousLabel="Anterior"
@@ -50,7 +47,6 @@
                         screenReaderCurrentLabel="você está na pagina">
         </pagination-controls>
     </div>
-
 </div>
 
 <div *ngIf="carregando" class="marcador-carregando d-flex justify-content-center">

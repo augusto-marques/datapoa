@@ -19,17 +19,9 @@
     position: relative;
     height: 0;
     padding-top: 85%;
-    /* position: absolute;
-    width: 50%; */
-    /* height: 20%; */
-    /* position: relative; */
     font-family: Quicksand;
     background-color: darkblue;
-    /* top: 18vh; */
     margin: auto;
-    /* padding: 50px; */
-    /* width: 30em;
-    height: 32em; */
     background-image: url("/assets/profilesingle.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat, no-repeat;
@@ -38,19 +30,18 @@
     text-shadow: 1px 1px 5px black;
 }
 
-
 .contato a:link {
     color: white;
 }
-    /* visited link */
+/* link visitado */
 .contato a:visited {
     color: whitesmoke;
 }
-    /* mouse over link */
+/* link mouse over */
 .contato a:hover {
     color: lightskyblue;
 }
-    /* selected link */
+/* link selecionado */
 .contato a:active {
     color: #3D44A8;
 }
@@ -62,7 +53,6 @@
 
     right: 0;
     text-align: center;
-    /* margin-top: 2em; */
     font-family: monospace;
     color: #13A10E; 
 }
@@ -71,8 +61,6 @@
     position: absolute;
     bottom: 2.5em;
     left: 2em;
-    /* left: 4em;
-    bottom: 9em; */
 }
 
 .contato-links {
@@ -98,12 +86,6 @@
     float: right;
 }
 
-.ascii-art {
-    font-size: 6px;
-    font-family: monospace;
-    white-space: pre-wrap;
-}
-
 @media (min-width: 576px) {
     .contato-links {
         font-size: 16px;
@@ -121,6 +103,5 @@
     .contato {
         background-image: url("/assets/profilecard2.png");
         padding-top: 45%;
-        /* width: 60em; */
     }
 }

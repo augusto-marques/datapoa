@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LinhaService } from '../linha.service';
 import { Location } from '@angular/common'
-import { Linha } from '../linha';
 
 @Component({
   selector: 'app-itinerario-onibus',
@@ -10,7 +9,7 @@ import { Linha } from '../linha';
   styleUrls: ['./itinerario-onibus.component.css']
 })
 export class ItinerarioOnibusComponent implements OnInit {
-  private url = "https://www.google.com/maps/?q="
+  private url = "https://www.google.com/maps/?q=";
   public itinerario = [];
   public carregando = true;
   p: number = 1;
@@ -22,20 +21,23 @@ export class ItinerarioOnibusComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getItinerario()
+    this.getItinerario();
   }
 
+  // Chama a funcao getItinerario do linhaService com o id passado pela rota e preenche a lista de itinerarios
   getItinerario(): void {
     const id = +this.rota.snapshot.paramMap.get('id');
     this.linhaService.getItinerario(id)
-      .subscribe(itinerario=> {this.itinerario = Object.values(itinerario).slice(1,25);
+      .subscribe(itinerario=> {this.itinerario = Object.values(itinerario);
       this.carregando = false});
   }
 
+  // Usa o componente location para voltar para a pagina anterior
   voltar(): void {
     this.location.back();
   }
 
+  // Abre a pagina do google maps com a latitude e longitiude do itinerario
   verMapa(lat, lng): void {
     window.open(this.url + `${lat}, ${lng}`, "_blank");
   }
