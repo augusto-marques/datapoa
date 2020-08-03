@@ -12,6 +12,7 @@ export class ListaLotacaoComponent implements OnInit {
   linhasFormatada: Linha[] = [];
   palavraChave: string;
   p: number = 1;
+  carregando = true;
 
   constructor(private linhaService: LinhaService) { }
 
@@ -23,7 +24,8 @@ export class ListaLotacaoComponent implements OnInit {
   getLinhas() : void {
     this.linhaService.getLinhasLotacao()
       .subscribe(linhas => {this.linhas = linhas;
-                            this.linhasFormatada = linhas});
+                            this.linhasFormatada = linhas;
+                            this.carregando = false;});
   }
 
   onKey(event: any) {

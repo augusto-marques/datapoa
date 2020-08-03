@@ -12,7 +12,7 @@ import { Linha } from '../linha';
 export class ItinerarioOnibusComponent implements OnInit {
   private url = "https://www.google.com/maps/?q="
   public itinerario = [];
-  public paginaCarregada: Boolean;
+  public carregando = true;
   p: number = 1;
 
   constructor(
@@ -22,7 +22,6 @@ export class ItinerarioOnibusComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.paginaCarregada = false;
     this.getItinerario()
   }
 
@@ -30,7 +29,7 @@ export class ItinerarioOnibusComponent implements OnInit {
     const id = +this.rota.snapshot.paramMap.get('id');
     this.linhaService.getItinerario(id)
       .subscribe(itinerario=> {this.itinerario = Object.values(itinerario).slice(1,25);
-      this.paginaCarregada = true});
+      this.carregando = false});
   }
 
   voltar(): void {

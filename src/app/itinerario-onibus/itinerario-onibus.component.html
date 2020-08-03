@@ -6,11 +6,11 @@
     </div>
 
     <div class="col">
-        <button *ngIf="paginaCarregada" (click)="voltar()" class="back-button btn btn-light">Voltar para linhas</button>
+        <button *ngIf="!carregando" (click)="voltar()" class="back-button btn btn-light">Voltar para linhas</button>
     </div>
 </div>
 
-<table class="table table-striped table-bordered table-sm">
+<table *ngIf="!carregando" class="table table-striped table-bordered table-sm">
     <thead>
         <tr>
             <th>Latitude</th>
@@ -34,7 +34,7 @@
     </tbody>
 </table>
 
-<pagination-controls class="pagination-component"
+<pagination-controls *ngIf="!carregando" class="pagination-component"
                 (pageChange)="p = $event"
                 previousLabel="Anterior"
                 nextLabel="Próximo"
@@ -43,4 +43,11 @@
                 screenReaderCurrentLabel="você está na pagina">
 </pagination-controls>
 
+</div>
+
+<div *ngIf="carregando" class="marcador-carregando d-flex justify-content-center">
+    <h3>carregando tabela&nbsp;&nbsp;</h3>
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Carregando...</span>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LinhaService } from '../linha.service';
 import { Linha } from '../linha';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lista-onibus',
@@ -12,6 +13,7 @@ export class ListaOnibusComponent implements OnInit {
   linhasFormatada: Linha[] = [];
   palavraChave: string;
   p: number = 1;
+  carregando = true;
 
   constructor(private linhaService: LinhaService) { }
 
@@ -23,7 +25,8 @@ export class ListaOnibusComponent implements OnInit {
   getLinhas() : void {
     this.linhaService.getLinhas()
       .subscribe(linhas => {this.linhas = linhas;
-                            this.linhasFormatada = linhas});
+                            this.linhasFormatada = linhas
+                            this.carregando = false});
   }
 
   onKey(event: any) {
